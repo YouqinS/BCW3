@@ -27,6 +27,7 @@
     // make an object for settings
     const settings = {
             method: 'POST',
+            // credentials: 'same-origin', // this might be needed for some servers
             body: data
         };
     // initiate fetch. In this example the server responds with text.
