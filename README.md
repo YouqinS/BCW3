@@ -32,9 +32,9 @@
     // initiate fetch. In this example the server responds with text.
     // Response could also be json. Then you would use response.json()
     fetch('upload.php', settings).then((response) => {
-        return response.text();
-    }).then((text) => {
-        console.log(text);
+        return response.json();
+    }).then((json) => {
+        console.log(json);
     });
 ```
 * [FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData)
