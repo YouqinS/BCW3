@@ -30,9 +30,9 @@
             // credentials: 'same-origin', // this might be needed for some servers
             body: data
         };
-    // initiate fetch. In this example the server responds with text.
-    // Response could also be json. Then you would use response.json()
-    fetch('upload.php', settings).then((response) => {
+    // initiate fetch. In this example the server responds with json.
+    // Response could also be text. Then you would use response.text()
+    fetch('someUrl', settings).then((response) => {
         return response.json();
     }).then((json) => {
         console.log(json);
