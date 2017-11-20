@@ -2,7 +2,8 @@
 
 ## Start
 1. Load and extract this repo as a ZIP https://github.com/ilkkamtk/BCW3
-   * save to same folder with WEB-INF to test in browser (web pages or webcontent)
+   * save to same folder with WEB-INF to test in browser (web pages or webcontent). In this case form action="servlet".
+   * you can also upload to /var/www/html/subfolder. In this case form action="ipadress:8080/servlet".
 
 ## 1. It's 90's again
 
