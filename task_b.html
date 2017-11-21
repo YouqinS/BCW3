@@ -18,11 +18,12 @@
 
 <body>
 
-    <form>
-        <input>
-        <input>
+    <form action="http://10.114.34.133:8080/UploadTest_war/do" method="post" enctype="multipart/form-data">
+        <input type="file" name="fileup" accept="image/*">
+        <input type="submit" value="Upload">
     </form>
     <p id="message"></p>
+    <img>
 
 <script src="js/main_b.js"></script>
 </body>
