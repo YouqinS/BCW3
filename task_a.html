@@ -17,10 +17,22 @@
 
 <body>
 
-    <form>
-        <input>
-        <input>
+    <!--<form action="/team_name_url/" method="post">-->
+        <!--<input id="" type="text" value="upload"> <br>-->
+        <!--<input id="image" type="file" name="myImg" value=""><br>-->
+        <!--<input type="submit" value="UPLOAD">-->
+    <!--</form>-->
+
+    <form ref='uploadForm'
+          id='uploadForm'
+          action='http://localhost:3000/upload'
+          method='post'
+          encType="multipart/form-data"><br><br>
+        <input type="file" name="sampleFile" /> <br><br>
+        <input type='submit' value='Upload!' /><br><br>
     </form>
+
+
 
     <script src="js/main.js"></script>
 </body>
