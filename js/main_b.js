@@ -21,17 +21,18 @@ const message = document.querySelector('#message');
 const input = document.querySelector('input[type="file"]');
 const submit = document.querySelector('input[type="submit"]');
 const data = new FormData();
-const form = document.querySelector('#uploadForm');
+//const form = document.querySelector('#uploadForm');
 
-form.addEventListener('click', function(event){
+submit.addEventListener('click', function(event){
   // - prevents the form from sending
 
   event.preventDefault();
 
   if(input.files.length === 0){
-    //submit.disabled = true;
+    submit.disabled = true;
   }else {
     message.innerHTML = 'Upload in progress...';
+
     data.append('fileToUpload', input.files[0]);
 
     fetch('http://10.114.32.120/node/profile', {
