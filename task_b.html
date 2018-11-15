@@ -18,12 +18,24 @@
 
 <body>
 
-    <form>
-        <input>
-        <input>
-    </form>
+<form ref='uploadForm'
+      id='uploadForm'
+      method='post'
+      encType="multipart/form-data"
+      >   <br><br>  <!--onsubmit="upload()"-->
+    <input type="file" name="fileToUpload" /> <br><br>
+    <input type='submit' value='Upload!' /><br><br>
+</form>
+
     <p id="message"></p>
     <img>
+
+<!--<form>-->
+    <!--<input>-->
+    <!--<input>-->
+<!--</form>-->
+<!--<p id="message"></p>-->
+<!--<img>-->
 
 <script src="js/main_b.js"></script>
 </body>
