@@ -37,7 +37,9 @@ form.addEventListener('click', function(event){
     fetch('http://10.114.32.120/node/profile', {
       method: 'POST',
       body: data
-    }).then(response => message.innerHTML = response.body);
+    }).then(response => response.text().then(function(text) {
+      message.innerHTML = text;
+    }));
   }
 });
 
