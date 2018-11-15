@@ -23,9 +23,7 @@ const submit = document.querySelector('input[type="submit"]');
 const data = new FormData();
 const form = document.querySelector('#uploadForm');
 
-form.addEventListener('click', upload(event));
-
-const upload = (event) =>{
+form.addEventListener('click', function(event){
   // - prevents the form from sending
 
   event.preventDefault();
@@ -36,13 +34,12 @@ const upload = (event) =>{
     message.innerHTML = 'Upload in progress...';
     data.append('fileToUpload', input.files[0]);
 
-    fetch('http://localhost:3000/tmp', {
+    fetch('http://10.114.32.120/node/profile', {
       method: 'POST',
       body: data
     }).then(response => message.innerHTML = response.body);
   }
-};
-
+});
 
 
 
