@@ -28,12 +28,7 @@ form.addEventListener('submit', function(event){
 
   event.preventDefault();
 
-  message.innerHTML = 'Upload in progress...';
-
-  if(input.files.length === 0){
-    submit.disabled = true;
-  }else {
-    //message.innerHTML = 'Upload in progress...';
+    message.innerHTML = 'Upload in progress...';
 
     formData.append('fileToUpload', input.files[0]);
 
@@ -43,7 +38,6 @@ form.addEventListener('submit', function(event){
     }).then(response => response.text().then(function(text) {
       message.innerHTML = text;
     }));
-  }
 });
 
 
