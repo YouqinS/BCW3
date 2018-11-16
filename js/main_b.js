@@ -17,14 +17,14 @@
 
 
 
-const message = document.querySelector('#message');
-const input = document.querySelector('input[type="file"]');
-const submit = document.querySelector('input[type="submit"]');
-const formData = new FormData();
-const form = document.querySelector('#uploadForm');
 
-form.addEventListener('submit', function(event){
+document.querySelector('#uploadForm').addEventListener('submit', function(event){
   // - prevents the form from sending
+  const message = document.querySelector('#message');
+  const input = document.querySelector('input[type="file"]');
+  const submit = document.querySelector('input[type="submit"]');
+  const formData = new FormData();
+ // const form = document.querySelector('#uploadForm');
 
   event.preventDefault();
 
@@ -41,7 +41,34 @@ form.addEventListener('submit', function(event){
 });
 
 
+function uploadOrNot() {
+  if (document.querySelector("input[type=file]").files[0]){
+    let input = document.querySelector("input[type=file]");
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
 
+      reader.onload = function(e) {
+        display(e.target.result);
+      };
+
+      reader.readAsDataURL(input.files[0]);
+    }
+  } else if (document.querySelector("input[type=text]").value){
+    display(document.querySelector("input[type=text]").value);
+  }
+}
+
+function display(res) {
+  let img = document.createElement("IMG");
+  img.src=res;
+  document.querySelector("#result").appendChild(img);
+};
+
+// document.getElementById('btn').onclick = function() {
+//   const img = document.createElement('img');
+//   img.src = document.getElementById('imagename').value;
+//   document.body.appendChild(img);
+// };
 
 /*
 
