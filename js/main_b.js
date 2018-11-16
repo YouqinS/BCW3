@@ -59,10 +59,10 @@ function uploadOrNot() {
 }
 
 function display(res) {
-  let img = document.createElement("IMG");
+  let img = document.createElement("img");
   img.src=res;
   document.querySelector("#result").appendChild(img);
-};
+}
 
 // document.getElementById('btn').onclick = function() {
 //   const img = document.createElement('img');
