@@ -20,24 +20,26 @@
 const message = document.querySelector('#message');
 const input = document.querySelector('input[type="file"]');
 const submit = document.querySelector('input[type="submit"]');
-const data = new FormData();
-//const form = document.querySelector('#uploadForm');
+const formData = new FormData();
+const form = document.querySelector('#uploadForm');
 
-submit.addEventListener('click', function(event){
+form.addEventListener('submit', function(event){
   // - prevents the form from sending
 
   event.preventDefault();
 
+  message.innerHTML = 'Upload in progress...';
+
   if(input.files.length === 0){
     submit.disabled = true;
   }else {
-    message.innerHTML = 'Upload in progress...';
+    //message.innerHTML = 'Upload in progress...';
 
-    data.append('fileToUpload', input.files[0]);
+    formData.append('fileToUpload', input.files[0]);
 
     fetch('http://10.114.32.120/node/profile', {
       method: 'POST',
-      body: data
+      body: formData
     }).then(response => response.text().then(function(text) {
       message.innerHTML = text;
     }));
@@ -52,15 +54,15 @@ submit.addEventListener('click', function(event){
 
 const input = document.querySelector('input[type="file"]');
 // make FormData -object
-const data = new FormData();
+const formData = new FormData();
 // add file to FormData -object.
 // Note that 'files' is an FileList object. This means that you can upload multiple files.
-data.append('fileToUpload', input.files[0]);
+formData.append('fileToUpload', input.files[0]);
 // make an object for settings
 const settings = {
   method: 'POST',
   // credentials: 'same-origin', // this might be needed for some servers
-  body: data
+  body: formData
 };
 // initiate fetch. In this example the server responds with text.
 // Response could also be json. Then you would use response.json()
