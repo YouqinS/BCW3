@@ -30,9 +30,9 @@ document.querySelector('#uploadForm').addEventListener('submit', function(event)
 
     message.innerHTML = 'Upload in progress...';
 
-    formData.append('fileToUpload', input.files[0]);
+    formData.append('avatar', input.files[0]);
 
-    fetch('http://10.114.32.120/node/profile', {
+    fetch('http://10.114.32.120/node/upload', {
       method: 'POST',
       body: formData
     }).then(response => response.text().then(function(text) {
